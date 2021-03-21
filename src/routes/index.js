@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get("/CNPJ/:CNPJ", function (req, res) {
-    let idEstabelecimento = req.params.idEstabelecimento
+    let idEstabelecimento = req.params.CNPJ
     var request = require('request');
     let retunJson;
     var options = {
