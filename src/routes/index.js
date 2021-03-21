@@ -10,24 +10,20 @@ router.get('/', function (req, res, next) {
 router.get("/CNPJ/:CNPJ", function (req, res) {
     let idEstabelecimento = req.params.idEstabelecimento
     var request = require('request');
-    let retunJson ;
+    let retunJson;
     var options = {
         'method': 'GET',
-        'url': 'https://www.receitaws.com.br/v1/cnpj/'+ idEstabelecimento ,
+        'url': 'https://www.receitaws.com.br/v1/cnpj/' + idEstabelecimento,
         'headers': {
         }
     };
 
     request(options, function (error, response) {
         if (error) throw new Error(error);
-        retunJson = response;
-      });
-
-    res.status(200).send({
-        title: "Node Express API",
-        json: JSON.parse(retunJson)
+        res.status(200).send({
+            response
+        });
     });
-
 });
 
 module.exports = router;
