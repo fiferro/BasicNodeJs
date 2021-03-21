@@ -8,6 +8,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.get("/CNPJ/:CNPJ", function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
     let idEstabelecimento = req.params.CNPJ
     var request = require('request');
     let retunJson;
