@@ -25,7 +25,7 @@ router.get("/CNPJ/:CNPJ", function (req, res) {
 
     res.status(200).send({
         title: "Node Express API",
-        json: retunJson
+        json: JSON.parse(retunJson)
     });
 
 });
