@@ -9,6 +9,7 @@ router.get('/', function (req, res, next) {
 
 router.get("/CNPJ/:CNPJ", function (req, res) {
     let idEstabelecimento = req.params.idEstabelecimento
+    console.log(idEstabelecimento);
     var request = require('request');
     var options = {
       'method': 'GET',
