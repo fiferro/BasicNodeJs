@@ -6,4 +6,8 @@ router.get('/', function (req, res, next) {
         version: "0.0.1"
     });
 });
+
+router.use('/contatos', require('./server/contatos'));
+
 module.exports = router;
+
